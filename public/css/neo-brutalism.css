@@ -1,0 +1,110 @@
+:root {
+    color-scheme: dark;
+    --neo-ink: #10100e;
+    --neo-lime: #d8ff3f;
+    --neo-coral: #ff765c;
+    --neo-paper: #f5efde;
+}
+
+body.mesh-bg {
+    background-color: #111 !important;
+    background-image:
+        linear-gradient(rgba(216, 255, 63, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 255, 63, 0.045) 1px, transparent 1px) !important;
+    background-size: 24px 24px !important;
+}
+
+.eng-grid {
+    background-image:
+        linear-gradient(rgba(216, 255, 63, 0.09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 255, 63, 0.09) 1px, transparent 1px) !important;
+    background-size: 24px 24px !important;
+}
+
+nav.sticky {
+    border-bottom: 3px solid var(--neo-lime) !important;
+    box-shadow: 0 4px 0 var(--neo-ink);
+    backdrop-filter: none !important;
+}
+
+footer {
+    border-top: 3px solid var(--neo-lime) !important;
+}
+
+[class~="rounded-2xl"],
+[class~="rounded-xl"] {
+    border-radius: 0 !important;
+}
+
+div[class~="rounded-2xl"][class~="border"],
+div[class~="rounded-xl"][class~="border"] {
+    border: 2px solid var(--neo-ink) !important;
+    box-shadow: 5px 5px 0 var(--neo-lime) !important;
+}
+
+a[class~="rounded-xl"][class~="border"],
+button[class~="rounded-xl"][class~="border"] {
+    border: 2px solid var(--neo-ink) !important;
+    box-shadow: 4px 4px 0 var(--neo-lime) !important;
+}
+
+a[class~="bg-sw-blue"],
+button[class~="bg-sw-blue"],
+[class~="bg-sw-blue"] {
+    border: 2px solid var(--neo-ink) !important;
+    border-radius: 0 !important;
+    background-color: var(--neo-lime) !important;
+    box-shadow: 4px 4px 0 var(--neo-paper) !important;
+    color: var(--neo-ink) !important;
+}
+
+[class~="text-sw-blue"] {
+    color: var(--neo-lime) !important;
+}
+
+[class~="border-sw-blue"] {
+    border-color: var(--neo-lime) !important;
+}
+
+[class~="text-bld-orange"] {
+    color: var(--neo-coral) !important;
+}
+
+[class~="bg-bld-orange"] {
+    background-color: var(--neo-coral) !important;
+}
+
+.glow-blue,
+.glow-orange {
+    box-shadow: 5px 5px 0 var(--neo-lime) !important;
+}
+
+.text-glow-blue,
+.text-glow-orange {
+    text-shadow: none !important;
+}
+
+.animated-border {
+    animation: none !important;
+    background: var(--neo-lime) !important;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+    border-radius: 0 !important;
+    border-width: 2px !important;
+    box-shadow: 3px 3px 0 var(--neo-lime);
+}
+
+:focus-visible {
+    outline: 3px solid var(--neo-lime) !important;
+    outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+    div[class~="rounded-2xl"][class~="border"],
+    div[class~="rounded-xl"][class~="border"] {
+        box-shadow: 3px 3px 0 var(--neo-lime) !important;
+    }
+}

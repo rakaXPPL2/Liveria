@@ -99,6 +99,11 @@
                     </svg>
                     <span>Upload Part</span>
                 </a>
+            @else
+                <a href="{{ route('login') }}"
+                   class="inline-flex items-center gap-1.5 rounded-xl bg-sw-blue px-4 py-2 text-xs font-bold text-white transition">
+                    <span>Login untuk Upload</span>
+                </a>
             @endauth
         </div>
     </div>
@@ -142,7 +147,7 @@
                                 @auth
                                     <a href="{{ route('designs.create') }}" class="text-sw-blue hover:underline">Unggah desain pertama sekarang →</a>
                                 @else
-                                    Masuk sebagai administrator untuk menambahkan data CAD &amp; Blender
+                                    <a href="{{ route('login') }}" class="text-sw-blue hover:underline">Login untuk mengunggah data CAD &amp; Blender</a>
                                 @endauth
                             </p>
                         </td>

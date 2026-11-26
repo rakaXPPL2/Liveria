@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Admin Login — Liveria Engineering Hub')
+@section('title', 'Login untuk Upload — Liveria Engineering Hub')
 
 @section('content')
 <div class="eng-grid min-h-[calc(100vh-140px)] flex items-center justify-center px-6 py-12"
@@ -24,8 +24,8 @@
                 <span class="h-1.5 w-1.5 rounded-full bg-sw-blue animate-pulse"></span>
                 <span>PDM Access Control Terminal</span>
             </div>
-            <h1 class="text-2xl font-extrabold text-white">Engineer &amp; Admin Login</h1>
-            <p class="mt-1 text-xs text-zinc-500 font-mono">Autentikasi sesi untuk manajemen aset 3D &amp; BOM</p>
+            <h1 class="text-2xl font-extrabold text-white">Login Pengguna</h1>
+            <p class="mt-1 text-xs text-zinc-500 font-mono">Masuk untuk mengunggah dan mengelola aset 3D &amp; BOM</p>
         </div>
 
         {{-- Card Container --}}
@@ -103,6 +103,11 @@
                     </svg>
                 </button>
             </form>
+
+            <p class="mt-5 text-center text-xs text-zinc-400">
+                Belum punya akun?
+                <a href="{{ route('register') }}" class="font-bold text-sw-blue hover:underline">Daftar di sini</a>
+            </p>
 
             {{-- Demo Credentials Quick-Fill Pill --}}
             <div class="mt-6 rounded-xl bg-zinc-900/70 p-3.5 text-xs text-zinc-400 border border-zinc-800 flex items-center justify-between">

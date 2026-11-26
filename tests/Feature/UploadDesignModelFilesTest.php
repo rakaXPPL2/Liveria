@@ -45,6 +45,25 @@ class UploadDesignModelFilesTest extends TestCase
             ->assertJsonPath('0.blend_url', asset('storage/'.$design->blend_file));
     }
 
+    public function test_guest_must_log_in_before_uploading_model_files(): void
+    {
+        Storage::fake('public');
+
+        $response = $this->post(route('designs.store'), [
+            'code_id' => 'MODEL-003',
+            'title' => 'Guest Upload',
+            'workflow_type' => 'blender',
+            'stl_file' => UploadedFile::fake()->createWithContent(
+                'part.stl',
+                "solid part\n facet normal 0 0 1\nendsolid part\n",
+            ),
+        ]);
+
+        $response->assertRedirectToRoute('login');
+        $this->assertDatabaseMissing('designs', ['code_id' => 'MODEL-003']);
+        Storage::disk('public')->assertEmpty();
+    }
+
     public function test_rejects_blend_files_without_a_blender_header(): void
     {
         Storage::fake('public');

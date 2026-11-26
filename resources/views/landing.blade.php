@@ -43,6 +43,7 @@
             }
         }
     </script>
+    <link rel="stylesheet" href="{{ asset('css/neo-brutalism.css') }}">
 
     {{-- Alpine.js --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -211,7 +212,7 @@
             </a>
 
             {{-- Center Navigation Links --}}
-            <div class="hidden md:flex items-center gap-8 text-xs font-semibold text-zinc-400">
+            <div class="hidden lg:flex items-center gap-8 text-xs font-semibold text-zinc-400">
                 <a href="#hero" class="hover:text-white transition tracking-wider">Home</a>
                 <a href="#blend-vault" class="hover:text-bld-orange transition tracking-wider flex items-center gap-1.5">
                     <svg class="w-3.5 h-3.5 text-bld-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,14 +226,14 @@
             </div>
 
             {{-- Right Actions --}}
-            <div class="hidden md:flex items-center gap-3">
+            <div class="hidden lg:flex items-center gap-3">
                 @guest
                     <a href="{{ route('login') }}"
                        class="inline-flex items-center gap-1.5 rounded-lg border border-zinc-700/80 bg-zinc-900/60 px-3.5 py-1.5 text-xs font-medium text-zinc-300 hover:border-zinc-500 hover:text-white transition">
                         <svg class="w-3.5 h-3.5 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
                         </svg>
-                        <span>Admin Login</span>
+                        <span>Login</span>
                     </a>
                 @endguest
                 @auth
@@ -265,7 +266,7 @@
             </div>
 
             {{-- Mobile Menu Trigger --}}
-            <button class="md:hidden text-zinc-400 hover:text-white transition" @click="mobileMenu = !mobileMenu">
+            <button class="lg:hidden text-zinc-400 hover:text-white transition" @click="mobileMenu = !mobileMenu">
                 <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -273,7 +274,7 @@
         </div>
 
         {{-- Mobile Menu Overlay --}}
-        <div x-show="mobileMenu" x-cloak class="border-t border-zinc-800 bg-[#0d0f12]/95 px-6 py-4 md:hidden">
+        <div x-show="mobileMenu" x-cloak class="border-t border-zinc-800 bg-[#0d0f12]/95 px-6 py-4 lg:hidden">
             <div class="flex flex-col gap-3 text-sm">
                 <a href="#hero" class="text-zinc-300 hover:text-white" @click="mobileMenu=false">Home</a>
                 <a href="#blend-vault" class="text-bld-orange font-semibold flex items-center gap-1.5" @click="mobileMenu=false">
@@ -289,7 +290,7 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
                         </svg>
-                        <span>Admin Login</span>
+                        <span>Login</span>
                     </a>
                 @endguest
             </div>
@@ -381,6 +382,11 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                                 </svg>
                                 <span>Upload Part</span>
+                            </a>
+                        @else
+                            <a href="{{ route('login') }}"
+                               class="inline-flex items-center gap-2 rounded-xl border border-zinc-700 bg-zinc-800/40 px-4 py-3 text-xs sm:text-sm font-semibold text-zinc-300 hover:text-white hover:border-zinc-500 transition">
+                                <span>Login untuk Upload</span>
                             </a>
                         @endauth
                     </div>
@@ -1032,7 +1038,7 @@
                 Mulai Kelola Proyek 3D &amp; CAD Sekarang
             </h2>
             <p class="mt-3 text-sm text-zinc-400 max-w-xl mx-auto">
-                Buka repositori lengkap atau login sebagai administrator untuk mengunggah model 3D baru.
+                Buka repositori lengkap atau login terlebih dahulu untuk mengunggah model 3D baru.
             </p>
             <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
                 <a href="{{ route('designs.index') }}"
@@ -1048,7 +1054,7 @@
                         <svg class="w-4 h-4 text-zinc-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/>
                         </svg>
-                        <span>Login Admin</span>
+                        <span>Login untuk Upload</span>
                     </a>
                 @endguest
             </div>
