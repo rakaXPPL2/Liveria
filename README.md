@@ -534,3 +534,4 @@ curl http://localhost:8000/api/designs?type=solidworks
 ---
 
 *LiveriaWeb &copy; 2026 — 3D Engineering &amp; Modeling Hub.*
+# Liveria
